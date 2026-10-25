@@ -1,0 +1,410 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #f1f5f9;
+  color: #1e293b;
+  padding: 20px 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.contenedor-principal {
+  background: #ffffff;
+  max-width: 800px;
+  width: 100%;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* ENCABEZADO Y LOGOS */
+.encabezado {
+  text-align: center;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.contenedor-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.logo-filantropis-grande {
+  height: 85px !important;
+  width: auto;
+}
+
+.logo-novanet {
+  height: 50px !important;
+  width: auto;
+}
+
+.encabezado h2 {
+  color: #1b365d;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.encabezado p {
+  color: #4a5568;
+  font-size: 13.5px;
+}
+
+/* PESTAÑAS PRINCIPALES */
+.pestanas {
+  display: flex;
+  gap: 8px;
+  border-bottom: 2px solid #e2e8f0;
+  margin-bottom: 20px;
+}
+
+.btn-pestana {
+  padding: 10px 16px;
+  border: none;
+  background: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #64748b;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s;
+}
+
+.btn-pestana:hover, .btn-pestana.activa {
+  color: #26094d;
+  border-bottom-color: #1b365d;
+}
+
+/* SUB-PESTAÑAS */
+.sub-pestanas {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.btn-sub-pestana {
+  padding: 8px 14px;
+  border: 1px solid #fcacc0;
+  background: #fcf3f6;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #810e3a;
+  cursor: pointer;
+}
+
+.btn-sub-pestana.activa {
+  background: #791536;
+  color: white;
+  border-color: #c5599c;
+}
+
+/* REGLA CRÍTICA: OCULTAR SUB-PESTAÑAS NO ACTIVAS */
+.contenido-pestana {
+  display: none;
+}
+
+.contenido-sub-pestana {
+  display: none;
+}
+
+.contenido-sub-pestana-fil {
+  display: none;
+}
+
+/* MOSTRAR ÚNICAMENTE LAS ACTIVAS */
+.contenido-pestana.activa {
+  display: block !important;
+}
+
+.contenido-sub-pestana.activa {
+  display: block !important;
+}
+
+.contenido-sub-pestana-fil.activa {
+  display: block !important;
+}
+
+.instruccion {
+  font-size: 13.5px;
+  color: #485566;
+  margin-bottom: 18px;
+}
+
+/* TARJETAS DE DIÁLOGO */
+.tarjeta-guion-amplia {
+  background: #f8fafc;
+  border: 1px solid #e2fae0;
+  border-radius: 10px;
+  padding: 18px;
+  margin-bottom: 16px;
+  display: flex;
+  gap: 15px;
+}
+
+.numero-paso {
+  background: #886525;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+.contenido-paso {
+  flex: 1;
+}
+
+.etiqueta-fase {
+  font-weight: 700;
+  color: #1b365d;
+  font-size: 14.5px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.instruccion-voz {
+  font-size: 13px;
+  color: #64748b;
+  margin-bottom: 8px;
+}
+
+.caja-dialogo {
+  background: #ffffff;
+  border-left: 5px solid #b2ee52;
+  padding: 12px 15px;
+  border-radius: 6px;
+  font-style: italic;
+  color: #1e293b;
+  font-size: 14.5px;
+  line-height: 1.5;
+  border-top: 1px solid #e2e8f0;
+  border-right: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.variable {
+  background: #eff6ff;
+  color: #1d4ed8;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-style: normal;
+  border: 1px dashed #bfdbfe;
+}
+
+.cierre-exitoso {
+  border-left: 5px solid #16a34a;
+  background-color: #f0fdf4;
+}
+
+.nota-ayuda {
+  font-size: 12.5px;
+  color: #0284c7;
+  margin-top: 8px;
+  display: block;
+}
+
+.tarjeta-estrategia {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 14px;
+}
+
+.tarjeta-estrategia h4 {
+  color: #1b365d;
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.frase {
+  font-style: italic;
+  color: #334155;
+  font-size: 13.5px;
+}
+
+.tip {
+  font-size: 12.5px;
+  color: #0284c7;
+  margin-top: 6px;
+}
+
+/* FORMULARIOS */
+.bloque-registro-atencion {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.caja-recordatorio-bd {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-left: 5px solid #16a34a;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.caja-recordatorio-bd h4 {
+  color: #166534;
+  font-size: 14.5px;
+  margin-bottom: 5px;
+}
+
+.caja-recordatorio-bd p {
+  color: #14532d;
+  font-size: 13.5px;
+}
+
+.separador {
+  border: 0;
+  height: 1px;
+  background: #cbd5e1;
+  margin: 25px 0;
+}
+
+.campo { margin-bottom: 15px; }
+.campo-doble { display: flex; gap: 15px; }
+.campo-doble .campo { flex: 1; }
+
+label {
+  display: block;
+  font-weight: 600;
+  font-size: 13.5px;
+  margin-bottom: 5px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 13px;
+  background-color: #1b365d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.tarjeta-plantilla-guardada {
+  background: #ecf8e7;
+  border: 1px solid #cbd5e1;
+  border-left: 5px solid #1b365d;
+  border-radius: 8px;
+  padding: 14px;
+  margin-bottom: 12px;
+}
+
+.tarjeta-plantilla-guardada h5 {
+  font-size: 15px;
+  color: #1b365d;
+  margin-bottom: 6px;
+}
+
+.tarjeta-plantilla-guardada p {
+  font-size: 13.5px;
+  color: #334155;
+  white-space: pre-wrap;
+  background: #f8fafc;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.btn-eliminar-plantilla {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.mensaje {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 13.5px;
+}
+
+.exito { background: hsl(230, 50%, 98%); color: #166534; }
+.error { background: #e2fee7; color: #991b1b; }
+.oculto { display: none !important; }
+.contenido-pestana, 
+.contenido-sub-pestana, 
+.contenido-sub-pestana-fil {
+  display: none !important;
+}
+
+.contenido-pestana.activa, 
+.contenido-sub-pestana.activa, 
+.contenido-sub-pestana-fil.activa {
+  display: block !important;
+}
+/* --- TEMÁTICA NARANJA EXCLUSIVA PARA NOVANET --- */
+#atencionNovanet h3 {
+  color: #ea580c !important; /* Título en tono naranja Novanet */
+  border-bottom: 2px solid #fdba74;
+  padding-bottom: 8px;
+}
+
+#atencionNovanet .btn-sub-pestana.activa {
+  background: #ea580c !important;
+  border-color: #ea580c !important;
+}
+
+#atencionNovanet .tarjeta-estrategia {
+  border-left: 5px solid #ea580c;
+  background-color: #fff7ed;
+}
+
+#atencionNovanet .tarjeta-estrategia h4 {
+  color: #c2410c;
+}
+
+/* Bloque de registro de citas con acento naranja */
+.bloque-registro-atencion {
+  border: 1px solid #fdba74;
+  box-shadow: 0 4px 12px rgba(234, 88, 12, 0.08);
+}
+
+.bloque-registro-atencion button[type="submit"] {
+  background-color: #ea580c !important; /* Botón de guardar cita en naranja */
+  transition: background-color 0.2s ease;
+}
+
+.bloque-registro-atencion button[type="submit"]:hover {
+  background-color: #c2410c !important;
+}

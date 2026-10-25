@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plataforma Operativa de Atención y Gestión</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="contenedor-principal">
+    
+    <!-- Encabezado Institucional -->
+    <header class="encabezado">
+      <div class="contenedor-logos">
+        <img src="logo-Filantropis.png" alt="Logo Filantropis" class="logo-institucional logo-filantropis-grande">
+        <img src="logo-novanet.jpg" alt="Logo Novanet" class="logo-institucional logo-novanet">
+      </div>
+      <h2>Plataforma Operativa de Atención y Gestión</h2>
+      <p>Guiones estratégicos de llamadas, plantillas reutilizables y control de citas presenciales para Novanet.</p>
+    </header>
+
+    <!-- Navegación por Pestañas Principales -->
+    <nav class="pestanas">
+      <button class="btn-pestana activa" onclick="cambiarPestana('llamadasFilantropis', this)">📞 Llamadas y Plantillas (Filantropis)</button>
+      <button class="btn-pestana" onclick="cambiarPestana('atencionNovanet', this)">👥 Atención al Cliente y Citas (Novanet)</button>
+    </nav>
+
+    <!-- SECCIÓN 1: LLAMADAS Y GESTIÓN DE PLANTILLAS (FILANTROPIS) -->
+    <section id="llamadasFilantropis" class="contenido-pestana activa">
+      <h3>Guiones de Llamadas y Plantillas Reutilizables - Filantropis</h3>
+      <p class="instruccion">Sigue los flujos institucionales o guarda plantillas personalizadas para llamadas futuras.</p>
+
+      <!-- Botones de Sub-pestañas (Pasando 'this' para evitar errores) -->
+      <div class="sub-pestanas">
+        <button class="btn-sub-pestana activa" onclick="cambiarSubPestanaFil('entrantesFil', this)">📲 Llamadas Entrantes</button>
+        <button class="btn-sub-pestana" onclick="cambiarSubPestanaFil('salientesFil', this)">📤 Llamadas Salientes</button>
+        <button class="btn-sub-pestana" onclick="cambiarSubPestanaFil('plantillasFil', this)">💾 Mis Plantillas Guardadas</button>
+      </div>
+
+      <!-- 1. BLOQUE EXCLUSIVO: Llamadas Entrantes -->
+      <div id="entrantesFil" class="contenido-sub-pestana-fil activa">
+        <div class="tarjeta-guion-amplia">
+          <div class="numero-paso">1</div>
+          <div class="contenido-paso">
+            <span class="etiqueta-fase">Saludo Formal ONG</span>
+            <div class="caja-dialogo">"Muy buenos días/tardes, le saluda <span class="variable">[Tu Nombre]</span> de la <strong>Asociación Filantropis</strong>. Es un gusto saludarle, ¿en qué le podemos servir hoy?"</div>
+          </div>
+        </div>
+
+        <div class="tarjeta-guion-amplia">
+          <div class="numero-paso">2</div>
+          <div class="contenido-paso">
+            <span class="etiqueta-fase">Criterio Ecológico Estricto (Alimentos/Refacciones)</span>
+            <div class="caja-dialogo">"Para la coordinación de alimentación o refacciones de nuestros eventos, le recordamos que en la Asociación Filantropis contamos con una política estricta de <strong>cero desechables</strong> por compromiso medioambiental. La presentación debe ser en loza o recipientes reusables."</div>
+            <p class="nota-ayuda">🌱 <em>Aviso:</em> Confirmar que el proveedor acepte la logística de devolución de vajilla.</p>
+          </div>
+        </div>
+
+        <div class="tarjeta-guion-amplia cierre-exitoso">
+          <div class="numero-paso">3</div>
+          <div class="contenido-paso">
+            <span class="etiqueta-fase">Cierre y Toma de Datos</span>
+            <div class="caja-dialogo">"Con gusto tomamos nota de su propuesta. Me brinda su teléfono y correo institucional para mantener la comunicación formal."</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. BLOQUE EXCLUSIVO: Llamadas Salientes -->
+      <div id="salientesFil" class="contenido-sub-pestana-fil">
+        <div class="tarjeta-guion-amplia">
+          <div class="numero-paso">1</div>
+          <div class="contenido-paso">
+            <span class="etiqueta-fase">Apertura e Identificación</span>
+            <div class="caja-dialogo">"Muy buenos días/tardes, le saluda <span class="variable">[Tu Nombre]</span> de la <strong>Asociación Filantropis</strong>. ¿Tengo el gusto de hablar con <span class="variable">[Nombre del Proveedor / Representante]</span>?"</div>
+          </div>
+        </div>
+
+        <div class="tarjeta-guion-amplia">
+          <div class="numero-paso">2</div>
+          <div class="contenido-paso">
+            <span class="etiqueta-fase">Coordinación Logística de Pedido / Foro</span>
+            <div class="caja-dialogo">"Le contacto para coordinar los detalles del servicio de <span class="variable">[refacciones / alimentación / alquiler de equipo]</span> para el evento <span class="variable">[Nombre del Evento / Foro]</span> el día <span class="variable">[Fecha]</span>..."</div>
+            <p class="nota-ayuda">📦 <em>Recordatorio:</em> Recalcar la hora exacta de entrega y la política ecologista sin platos ni cubiertos desechables.</p>
+          </div>
+        </div>
+
+        <div class="tarjeta-guion-amplia cierre-exitoso">
+          <div class="numero-paso">3</div>
+          <div class="contenido-paso">
+            <span class="etiqueta-fase">Confirmación de Acuerdo</span>
+            <div class="caja-dialogo">"Quedamos coordinados. Le envío el correo de confirmación con el desglose de lo conversado."</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. BLOQUE EXCLUSIVO: Mis Plantillas Guardadas -->
+      <div id="plantillasFil" class="contenido-sub-pestana-fil">
+        <div class="tarjeta-guion-amplia" style="border-left: 5px solid #d97706; background: #fffbeb;">
+          <div class="contenido-paso">
+            <span class="etiqueta-fase" style="color: #b45309;">📝 Crear y Guardar Nueva Plantilla de Diálogo</span>
+            <p class="instruccion-voz">Escribe la información o guion especial que necesitarás utilizar más adelante o la próxima semana:</p>
+            
+            <div class="campo" style="margin-top: 10px;">
+              <label for="nombrePlantilla">Título de la Plantilla:</label>
+              <input type="text" id="nombrePlantilla" placeholder="Ej: Pedido de Refacciones Evento Foro - Cero Desechables">
+            </div>
+
+            <div class="campo">
+              <label for="contenidoPlantilla">Diálogo / Información Específica:</label>
+              <textarea id="contenidoPlantilla" rows="4" placeholder="Escribe aquí el texto exacto que debes decir al proveedor o cliente..."></textarea>
+            </div>
+
+            <button type="button" onclick="guardarPlantillaLocal()" style="background: #1b365d; padding: 10px 16px; font-size: 14px; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold;">💾 Guardar Plantilla para Uso Futuro</button>
+          </div>
+        </div>
+
+        <h4 style="margin: 20px 0 10px 0; color: #1b365d;">📋 Plantillas Guardadas Disponibles:</h4>
+        <div id="listaPlantillasGuardadas">
+          <p style="color: #64748b; font-size: 13.5px;">No hay plantillas personalizadas guardadas aún.</p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- SECCIÓN 2: ATENCIÓN AL CLIENTE Y REGISTRO DE CITAS (NOVANET) -->
+    <section id="atencionNovanet" class="contenido-pestana">
+      <h3>Atención Presencial y Negociación - Novanet</h3>
+      <p class="instruccion">Estrategias avanzadas de negociación, catálogo editable de servicios y registro directo de citas.</p>
+
+      <!-- Sub-navegación dentro de Novanet -->
+      <div class="sub-pestanas">
+        <button class="btn-sub-pestana activa" onclick="cambiarSubPestana('guionFamilias', this)">🏡 Atención a Familias / Residencial</button>
+        <button class="btn-sub-pestana" onclick="cambiarSubPestana('guionOrganizaciones', this)">🏢 Organizaciones / Casos Institucionales</button>
+        <button class="btn-sub-pestana" onclick="cambiarSubPestana('planesNovanet', this)">📶 Planes y Servicios Editables</button>
+      </div>
+
+      <!-- Guion Familias -->
+      <div id="guionFamilias" class="contenido-sub-pestana activa">
+        <div class="tarjeta-estrategia">
+          <h4>🤝 1. Bienvenida Amigable y Conexión en Idioma Ixil</h4>
+          <p class="frase">"¡Buenas tardes! Bienvenido/a a la oficina de Novanet. Tome asiento con toda confianza. ¿En qué le podemos apoyar el día de hoy?"</p>
+          <p class="tip">💡 <em>Estrategia Ixil:</em> Si notas que la persona prefiere comunicarse en su idioma materno, habla en <strong>idioma Ixil</strong> de inmediato. Rompe el hielo y transmite la calidez de ser un servicio local de Chajul.</p>
+        </div>
+
+        <div class="tarjeta-estrategia">
+          <h4>📊 2. Descubrimiento de Necesidades y Argumento Comercial</h4>
+          <p class="frase">"Cuénteme, ¿cuántas personas van a usar la red en casa y si la necesitan para estudios, videos o trabajo? En Novanet nos aseguramos de que no pague de más, sino que tenga la velocidad exacta con señal estable y soporte técnico inmediato en su propia comunidad sin esperar días."</p>
+        </div>
+
+        <div class="tarjeta-estrategia exito-cierre">
+          <h4>🎯 3. Cierre de Venta y Toma de Datos para Instalación</h4>
+          <p class="frase">"Perfecto. Para asegurar su cupo de instalación y no hacerle esperar, de una vez le tomo sus datos (nombre, número de DPI, teléfono y la dirección exacta) para agendar la visita de nuestro técnico en el horario que mejor le quede."</p>
+        </div>
+      </div>
+
+      <!-- Guion Organizaciones -->
+      <div id="guionOrganizaciones" class="contenido-sub-pestana">
+        <div class="tarjeta-estrategia">
+          <h4>🏛️ 1. Recepción de Alto Nivel y Seguridad Institucional</h4>
+          <p class="frase">"Es un verdadero honor recibir a los representantes de <span class="variable">[Nombre de la Organización]</span> en Novanet. Sean bienvenidos. Entendemos perfectamente que para una institución como la suya, una conexión de internet no es un lujo, sino una herramienta crítica de trabajo diario."</p>
+        </div>
+
+        <div class="tarjeta-estrategia">
+          <h4>💼 2. Argumentación Fuertes y Diferenciadores de Novanet</h4>
+          <p class="frase">"A diferencia de proveedores externos que tardan días en responder cuando hay una falla, Novanet nació aquí mismo. Contamos con monitoreo de red constante, soporte técnico prioritario en minutos y personal capacitado que habla nuestro idioma y entiende las necesidades locales."</p>
+          <p class="tip">🛡️ <em>Técnica Anti-Nervios:</em> Mantén una postura firme, habla pausado y enfócate en 3 pilares: <strong>Estabilidad, Atención Inmediata Local y Trato Cercano Directo</strong>.</p>
+        </div>
+
+        <div class="tarjeta-estrategia exito-cierre">
+          <h4>📋 3. Manejo de Cierre Comercial Institucional</h4>
+          <p class="frase">"Podemos prepararles una propuesta corporativa personalizada con enlace dedicado. Tomemos de una vez los datos de su representante institucional para coordinar la inspección técnica de factibilidad hoy mismo."</p>
+        </div>
+      </div>
+
+      <!-- Planes y Servicios Editables Novanet -->
+      <div id="planesNovanet" class="contenido-sub-pestana">
+        <div class="tarjeta-guion-amplia" style="border-left: 5px solid #2563eb; background: #eff6ff;">
+          <div class="contenido-paso">
+            <span class="etiqueta-fase" style="color: #1d4ed8;">📶 Configurar / Personalizar Oferta de Planes de Internet</span>
+            <p class="instruccion-voz">Escribe o actualiza los planes de internet vigentes para que el personal de recepción tenga la lista exacta a la mano al negociar:</p>
+
+            <div class="campo">
+              <label for="tituloPlan">Nombre del Plan o Paquete:</label>
+              <input type="text" id="tituloPlan" placeholder="Ej: Plan Familiar Basico - 10 Megas">
+            </div>
+
+            <div class="campo">
+              <label for="detallesPlan">Detalles, Precio y Características:</label>
+              <textarea id="detallesPlan" rows="3" placeholder="Ej: Q150/mes. Ideal para 3 dispositivos, clases virtuales y WhatsApp. Incluye instalación rápida..."></textarea>
+            </div>
+
+            <button type="button" onclick="guardarPlanNovanet()" style="background: #2563eb; padding: 10px 16px; font-size: 14px; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold;">💾 Guardar Plan en el Catálogo</button>
+          </div>
+        </div>
+
+        <h4 style="margin: 20px 0 10px 0; color: #1b365d;">📶 Catálogo de Planes Disponibles de Novanet:</h4>
+        <div id="listaPlanesNovanet">
+          <p style="color: #64748b; font-size: 13.5px;">Cargando catálogo de planes...</p>
+        </div>
+      </div>
+
+      <hr class="separador">
+
+      <!-- FORMULARIO DE REGISTRO INTEGRADO DIRECTAMENTE EN ATENCIÓN AL CLIENTE -->
+      <div class="bloque-registro-atencion">
+        <div class="caja-recordatorio-bd">
+          <h4>📌 Registro Obligatorio de Visita / Cita Técnica</h4>
+          <p>Para evitar compromisos incumplidos, registra aquí mismo los datos del cliente inmediatamente después de acordar el día y la hora de la visita.</p>
+        </div>
+
+        <form id="formCitaNovanet">
+          <div class="campo">
+            <label for="nombreCliente">Nombre Completo del Cliente u Organización:</label>
+            <input type="text" id="nombreCliente" placeholder="Ej: Juan Pérez / Asociación" required>
+          </div>
+
+          <div class="campo-doble">
+            <div class="campo">
+              <label for="dpiCliente">Número de DPI (Para contrato/instalación):</label>
+              <input type="text" id="dpiCliente" placeholder="Ej: 1234 56789 1407">
+            </div>
+            <div class="campo">
+              <label for="telefonoCliente">Teléfono de Contacto:</label>
+              <input type="text" id="telefonoCliente" placeholder="Ej: 5555-1234" required>
+            </div>
+          </div>
+
+          <!-- CAMPO DE CORREO ELECTRONICO -->
+          <div class="campo">
+            <label for="correoCliente">Correo Electrónico (Si aplica):</label>
+            <input type="email" id="correoCliente" placeholder="Ej: correo@ejemplo.com">
+          </div>
+
+          <div class="campo">
+            <label for="ubicacionCliente">Ubicación exacta / Comunidad para la visita:</label>
+            <input type="text" id="ubicacionCliente" placeholder="Ej: Cantón Ilóm, Chajul / Referencia cerca de la escuela" required>
+          </div>
+
+          <div class="campo-doble">
+            <div class="campo">
+              <label for="fechaCita">Fecha Acordada de Visita:</label>
+              <input type="date" id="fechaCita" required>
+            </div>
+            <div class="campo">
+              <label for="horaCita">Hora Compromiso:</label>
+              <input type="time" id="horaCita" required>
+            </div>
+          </div>
+
+          <div class="campo">
+            <label for="detallesCita">Servicio de Interés y Observaciones:</label>
+            <textarea id="detallesCita" rows="3" placeholder="Ej: Interesados en Plan Residencial 10MB / Requiere confirmación previa por llamada..."></textarea>
+          </div>
+
+          <button type="submit" id="btnGuardarCita">Guardar Cita en la Base de Datos</button>
+        </form>
+
+        <div id="mensajeExitoCita" class="mensaje exito oculto">✅ ¡Cita y cliente registrados en Google Sheets!</div>
+        <div id="mensajeErrorCita" class="mensaje error oculto">❌ Error al guardar. Verifica la conexión.</div>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
